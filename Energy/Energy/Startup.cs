@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 // lets go get AWAKE chocolate
+// hello
 namespace Energy
 {
     public class Startup
