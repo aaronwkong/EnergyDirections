@@ -97,5 +97,42 @@
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAP9sQ79tg2oVLIOCvUQ6Wy4P-n-i5UaCU&callback=initMap">
     </script>
+
+     <input onchange="walkBox()"
+           type="checkbox"
+           name="walk"
+           value="walk"
+           id="feet" /> walk
+
+    <input type="number" name="maxWalkDis" id = "walkBox" placeholder="max walking distance" min="0" disabled/>
+
+    <input onchange="carBox()"
+           type="checkbox"
+           name="vehicle"
+           value="car"
+           id="vehicle" /> car
+
+    <script src="~/js/site.js"></script>
+
+    <select name="fuel type" id="fuel type" disabled>
+        <option disabled selected>fuel type</option>
+        <option value="gasoline">Gasoline</option>
+        <option value="diesel">Diesel</option>
+        <option value="hybrid">Hybrid</option>
+        <option value=" electricity">Electricity</option>
+    </select>
+
+    <input onchange="bikeBox()"
+           type="checkbox"
+           name="bike"
+           value="bike"
+           id="pedal" /> bike
+
+    <input type="number" name="maxBikeDis" id= "bikeBox" placeholder="max biking distance" min="0" disabled/>
+
+    <input type ="checkbox"
+           name="bus"
+           value="bus"
+           id="bus" /> bus
 </body>
 </html>
