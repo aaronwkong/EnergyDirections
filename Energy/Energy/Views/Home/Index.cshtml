@@ -23,13 +23,19 @@
         <button id="route">Route!</button>
         <button id="reverse">Reverse Route</button>
     </div>
+
+
     <!--The div element for the map -->
     <div id="map"></div>
     <script src="~/js/site.js"></script>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAP9sQ79tg2oVLIOCvUQ6Wy4P-n-i5UaCU&callback=initMap">
-    </script>
 
+/**/</script>
+
+
+
+    <!--TRAVEL OPTIONS-->
     <input onchange="walkBox()"
            type="checkbox"
            name="walk"
@@ -66,5 +72,8 @@
            name="bus"
            value="bus"
            id="bus" /> bus
+
+    <!--Directions-->
+    <div id="right-panel"></div>
 </body>
 </html>

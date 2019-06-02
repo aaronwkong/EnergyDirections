@@ -15,9 +15,15 @@
     // The marker, positioned at Uluru
     var marker = new google.maps.Marker({ position: uluru, map: map });
 }*/
+
+
 // Global variables for markers (hehe)
 var marker1;
 var marker2
+var resultCar = document.getElementById("vehicle").checked;
+var resultWalk = document.getElementById("feet").checked;
+var resultBike = document.getElementById("pedal").checked;
+var resultTransit = document.getElementById("bus").checked;
 
 
 function initMap() {
@@ -30,6 +36,7 @@ function initMap() {
     marker1 = new google.maps.Marker({ position: { lat: 41.85, lng: -87.65 }, map: map, draggable: true });
     marker2 = new google.maps.Marker({ position: { lat: 41.95, lng: -87.65 }, map: map, draggable: true });
     directionsDisplay.setMap(map);
+    directionsDisplay.setPanel(document.getElementById('right-panel'));
 
     var onChangeHandler = function () {
         calculateAndDisplayRoute(directionsService, directionsDisplay);
@@ -46,6 +53,28 @@ function initMap() {
 }
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+    var responseWalk;
+    var responseBike;
+    var responseTransit;
+    var responseCar;
+    resultCar = document.getElementById("vehicle").checked;
+    resultWalk = document.getElementById("feet").checked;
+    resultBike = document.getElementById("pedal").checked;
+    resultTransit = document.getElementById("bus").checked;
+
+  /*  if (resultCar) {
+        directionsService.route({
+            origin: marker1.position,
+            destination: marker2.position,
+            travelMode: 'WALKING'
+        }, function (responseWalk, status) {
+            if (status === 'OK') {
+                directionsDisplay.setDirections(response);
+            } else {
+                window.alert('Directions request failed due to ' + status);
+            }
+        });*/
+
     directionsService.route({
         origin: marker1.position,
         destination: marker2.position,
@@ -63,8 +92,8 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 // SELECTING TRAVEL METHOD FUNCTIONS
 
 function carBox() {
-    var result = document.getElementById("vehicle").checked; 
-    if (result) {
+    resultCar = document.getElementById("vehicle").checked; 
+    if (resultCar) {
         document.getElementById("fuel type").disabled = false;
     }
     else {
@@ -73,8 +102,8 @@ function carBox() {
 }
 
 function walkBox() {
-    var result = document.getElementById("feet").checked;
-    if (result) {
+    resultWalk = document.getElementById("feet").checked;
+    if (resultWalk) {
         document.getElementById("walkBox").disabled = false;
     }
     else {
@@ -83,8 +112,8 @@ function walkBox() {
 }
 
 function bikeBox() {
-    var result = document.getElementById("pedal").checked;
-    if (result) {
+    resultBike = document.getElementById("pedal").checked;
+    if (resultBike) {
         document.getElementById("bikeBox").disabled = false;
     }
     else {
